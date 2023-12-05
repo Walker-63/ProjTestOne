@@ -1,0 +1,25 @@
+
+import React, { useState } from 'react';
+
+const DynamicListWithState = () => {
+  const [items, setItems] = useState(['Item 1', 'Item 2', 'Item 3', 'Item 4']);
+
+  const addItem = () => {
+    const newItem = `New Item ${items.length + 1}`;
+    setItems([...items, newItem]);
+  };
+
+  return (
+    <div>
+      <Text>  
+        <h2>Dynamic List with State:</h2>
+        <button onClick={addItem}>Add New Item</button>
+        <ul>
+            {items.map((item, index) => (<li key={index}>{item}</li>))}
+        </ul>
+      </Text>
+    </div>
+  );
+};
+
+export default DynamicListWithState;
